@@ -29,20 +29,19 @@ exports.hook_data_post = function (next, connection) {
     //if (connection.transaction.rcpt_to.length != 1) {
     //    return next();
     //}
-
-    self.loginfo('email received to: ' + connection.transaction.rcpt_to[0].address().toLowerCase());
-    // Check recipient is the right one
-    //if (connection.transaction.rcpt_to[0].address().toLowerCase() != recip) {
-    //    return next();
-    //}
-
     // Check sender is in list
     var sender = connection.transaction.mail_from.address();
     //if (!utils.in_array(sender, senders)) {
     //    return next(DENY, "You are not allowed to block mail, " + sender);
     //}
 
-    self.loginfo('email received from: ' + sender);
+    self.loginfo('email received from: ' + sender, connection);
+
+    self.loginfo('email to: ' + connection.transaction.rcpt_to[0].address().toLowerCase(), connection);
+    // Check recipient is the right one
+    //if (connection.transaction.rcpt_to[0].address().toLowerCase() != recip) {
+    //    return next();
+    //}
 
     // Now extract the "From" from the body...
     //var to_block = extract_from_line(connection.transaction.body);
