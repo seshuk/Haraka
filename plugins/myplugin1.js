@@ -40,7 +40,7 @@ exports.my_mail = function (next, connection, params) {
        plugin.logdebug('*********************************************', connection);
        plugin.logdebug('************* SESHUTESTPLUGIN my_mail********', connection);
        plugin.logdebug('*********************************************', connection);
-       plugin.logdebug('Address: ' + params[0], connection);
+       plugin.logdebug('From Address: ' + params[0], connection);
        return next();
 };
 
