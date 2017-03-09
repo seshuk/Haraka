@@ -37,7 +37,7 @@ logger.colors = {
     "PROTOCOL" : "green",
     "DEBUG" : "grey",
     "INFO" : "cyan",
-    "NOTICE" : "blue",
+    "NOTICE" : "magenta",
     "WARN" : "red",
     "ERROR" : "red",
     "CRIT" : "red",
