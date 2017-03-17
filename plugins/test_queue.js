@@ -10,5 +10,8 @@ exports.hook_queue = function (next, connection) {
     ws.once('close', function () {
         return next(OK);
     });
+    //connection.transaction.header.header_list.push("cleandocs - addin: smtp_relay_server");
     connection.transaction.message_stream.pipe(ws);
 };
+
+
